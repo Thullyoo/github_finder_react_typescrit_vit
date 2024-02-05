@@ -1,0 +1,15 @@
+.btn{
+ left: 0;
+ top: 0;
+ position: fixed;
+ margin: 20px;
+}
+
+.btn a button{
+ color: white;
+ padding: 15px 20px;
+ background-color: #2b3566;
+ border-radius: 1rem;
+ border: 0;
+ cursor: pointer;
+}

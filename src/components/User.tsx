@@ -2,6 +2,7 @@ import { MdLocationPin } from 'react-icons/md';
 import { UserProps } from '../types/user';
 import { Link } from 'react-router-dom';
 import classes from './User.module.css';
+import Load from './Load';
 
 
 const User = ({
@@ -11,8 +12,15 @@ const User = ({
  following,
  location,
 }: UserProps) => {
+
+  
  return(
   <div className={classes.user}>
+  {!User && (
+     <div>
+      <Load/>
+      </div>
+  )}
   <img src={avatar_url} alt={login} />
    <h2>{login}</h2>
    {location && (

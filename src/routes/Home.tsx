@@ -4,15 +4,12 @@ import { useState } from 'react';
 import Search from '../components/Search';
 import User from '../components/User';
 import Error from '../components/Error';
-import Load from '../components/Load';
 
 const Home = () =>{
 
- const [viewLoading, setViewLoading] = useState(true);
  const [error, setError] = useState(false);
  const [user, setUser] = useState<UserProps | null>(null)
-
-
+ 
 
  const loadUser = async(userName : string) => {
   
@@ -44,16 +41,15 @@ const Home = () =>{
   
   const resposs = await fetch(`https://api.github.com/users/${userName}/repos`);
   
-  const data2 = await resposs.json();
-  
-  console.log(data)
-  console.log(data2)
+  await resposs.json();
+
+
+
  }
 
  return(
   <div>
    <Search  loadUser={loadUser}/>
-   {/* {viewLoading && <Load/>} */}
    {user && (
     <User
     avatar_url={user.avatar_url}
