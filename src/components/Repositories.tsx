@@ -12,7 +12,7 @@ const Repositories = ({ user }: { user: string }) => {
 
 
   useEffect(() => {
-    setTimeout(() => {
+    
       async function getRespositories(user: string) {
 
         await fetch(`https://api.github.com/users/${user}/repos`)
@@ -28,8 +28,7 @@ const Repositories = ({ user }: { user: string }) => {
       }
 
       getRespositories(user);
-    }, 2000);
-
+    
   }, [])
 
   return (
