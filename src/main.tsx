@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <App/>,
     children: [
       {
-        path: '/',
+        path: '/github_finder_react_typescrit_vite',
         element: <Home/>,
       },
       {
